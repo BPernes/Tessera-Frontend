@@ -1,11 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react'
+import { StyleSheet, View } from 'react-native';
 
-import SearchScreen from './src/views/SearchScreen/SearchScreen';
+// import SearchScreen from './src/screens/SearchScreen/SearchScreen';
+import HomeScreen from './src/screens/HomeScreen/HomeScreen';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <SearchScreen/>
+      <HomeScreen/>
     </View>
   );
 }
@@ -13,7 +15,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFFFFF',
     alignItems: 'center',
     justifyContent: 'center',
   },

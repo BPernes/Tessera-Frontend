@@ -1,13 +1,5 @@
 const getAll = async () => {
-    const res = await fetch('http://localhost:3000/api/deputados', {
-        method: 'GET',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        
-    })
-    console.log(JSON.stringify(res.json()))
+    const res = await fetch('http://localhost:3000/api/deputados',)
     return res.json()
 }
 

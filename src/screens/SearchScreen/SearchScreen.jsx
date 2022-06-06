@@ -3,7 +3,7 @@ import { View } from 'react-native'
 
 // import * as DeputadosRepository from './helpers/DeputadosRepository'
 
-import DeputadosList from '../../components/DeputadosList'
+import DeputadosList from './components/DeputadosList'
 
 const SearchScreen = () => {
 
