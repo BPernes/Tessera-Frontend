@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { View, FlatList } from 'react-native'
 
 import CardDeputado from './CardDeputado'
-import * as DeputadosAPI from '../helpers/DeputadosAPI'
+import * as DeputadosAPI from '../../../helpers/DeputadosAPI'
 
 
 const DeputadosList = () => {
