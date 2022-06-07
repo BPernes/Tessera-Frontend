@@ -5,43 +5,11 @@ import { View } from 'react-native'
 
 import DeputadosList from './components/DeputadosList'
 
-const SearchScreen = () => {
-
-    // useEffect(() => {
-    //     loadStorage()
-    //     // getStorageData()
-    // }, [])
-
-    // const loadStorage = async () => {
-    //     try {
-    //         const data = await DeputadosApi.getAll()
-    //         data !== null ? 
-    //         setDeputadosList(dados) 
-    //         : 
-    //         console.log(`Sem dados`);
-
-    //         // await DeputadosRepository.add(data)
-    //     }
-    //     catch(err) {
-    //         console.log(err)
-    //     }
-    // }
-
-    // const getStorageData = async () => {
-    //     try {
-    //         const deputados = await DeputadosRepository.getAll()
-    //         setDeputadosList(deputados)
-    //         console.log(`Deputados vindos do storage ${deputados}`);
-
-    //     }
-    //     catch(err) {
-    //         console.log(err);
-    //     }
-    // }
+const SearchScreen = ({navigation}) => {
 
     return (
         <View>
-            <DeputadosList/>
+            <DeputadosList navigation={navigation}/>
         </View>
     )
 }
