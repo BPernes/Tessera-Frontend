@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList, Text } from 'react-native'
+import { View, FlatList, TouchableOpacity } from 'react-native'
 
 import { Divider } from 'react-native-paper'
 
@@ -7,7 +7,7 @@ import CardDeputado from './CardDeputado'
 import * as DeputadosAPI from '../../../helpers/DeputadosAPI'
 
 
-const DeputadosList = () => {
+const DeputadosList = ({navigation}) => {
     const [deputadosList, setDeputadosList] = useState([])
     
     useEffect (() => {
@@ -30,14 +30,16 @@ const DeputadosList = () => {
             <FlatList
                 data={deputadosList}
                 renderItem={ ({item}) => 
-                    <View>
+                    <TouchableOpacity 
+                        onPress={() => navigation.navigate('deputado', {...item})}
+                    >
                         <CardDeputado 
                             nome = {item.nome}
                             siglaUf = {item.siglaUf}
                             siglaPartido = {item.siglaPartido}
                             urlFoto = {item.urlFoto}
                         />
-                    </View>
+                    </TouchableOpacity>
                 }
                 keyExtractor={(deputado) => deputado.id}
                 extraData={deputadosList}
