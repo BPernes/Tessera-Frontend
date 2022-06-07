@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { View, FlatList } from 'react-native'
+import { View, FlatList, Text } from 'react-native'
+
+import { Divider } from 'react-native-paper'
 
 import CardDeputado from './CardDeputado'
 import * as DeputadosAPI from '../../../helpers/DeputadosAPI'
@@ -23,36 +25,24 @@ const DeputadosList = () => {
         }
     }
 
-    console.log(deputadosList[0]?.nome)
-
-    // const renderDeputados = ({ item }) => 
-    //     <View>
-    //         <CardDeputado 
-    //             nome = {item[0].nome}
-    //             siglaUf = {item[0].siglaUf}
-    //             siglaPartido = {item[0].siglaPartido}
-    //             urlFoto = {item[0].urlFoto}
-    //         />
-    //     </View>
-    
-
     return (
         <View>
-            <FlatList>
+            <FlatList
                 data={deputadosList}
                 renderItem={ ({item}) => 
                     <View>
                         <CardDeputado 
-                            nome = {item[0]?.nome}
-                            siglaUf = {item[0]?.siglaUf}
-                            siglaPartido = {item[0]?.siglaPartido}
-                            urlFoto = {item[0]?.urlFoto}
+                            nome = {item.nome}
+                            siglaUf = {item.siglaUf}
+                            siglaPartido = {item.siglaPartido}
+                            urlFoto = {item.urlFoto}
                         />
                     </View>
                 }
-                keyExtractor={(deputado) => deputado[0]?.id}
+                keyExtractor={(deputado) => deputado.id}
                 extraData={deputadosList}
-            </FlatList>
+                ItemSeparatorComponent={Divider}
+            />
         </View>
     )
 

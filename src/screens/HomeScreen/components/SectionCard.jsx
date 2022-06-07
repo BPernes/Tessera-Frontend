@@ -1,11 +1,11 @@
 import React from 'react'
 import { StyleSheet } from 'react-native'
-import { Button } from 'react-native-paper'
+import { Card } from 'react-native-paper'
 
-const SectionCard = ({text}) => (
-    <Button mode='outlined' style={styles.customButton}>
-        {text}
-    </Button>
+const SectionCard = ({title, content, coverUrl}) => (
+    <Card> 
+        <Card.Cover source={coverUrl}/>
+    </Card>
 )
 
 const styles = StyleSheet.create({
